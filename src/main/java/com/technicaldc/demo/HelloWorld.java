@@ -1,7 +1,7 @@
 package com.technicaldc.demo;
 
 public class HelloWorld {
-	/* @SuppressWarnings("unused") */
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// Primitive: int, long, short, byte, char, float, double, boolean
 		// int variable = 28;
