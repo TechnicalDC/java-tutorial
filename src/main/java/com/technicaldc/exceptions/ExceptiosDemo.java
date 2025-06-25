@@ -6,16 +6,26 @@ import java.io.IOException;
 
 public class ExceptiosDemo {
 	public static void show() {
+		FileReader reader = null;
+
 		try {
-			var reader = new FileReader("test.txt");
-			reader.close();
-		}
-		catch (FileNotFoundException e) {
-			// e.printStackTrace();
-			System.out.println(e.getMessage());
+			reader = new FileReader("test.txt");
 		}
 		catch (IOException io) {
 			System.out.println(io.getMessage());
+		}
+		/* catch (FileNotFoundException e) { */
+		/* 	// e.printStackTrace(); */
+		/* 	System.out.println(e.getMessage()); */
+		/* } */
+		finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
